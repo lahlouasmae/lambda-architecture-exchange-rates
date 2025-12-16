@@ -1,0 +1,23 @@
+[2025-12-14T18:42:44.362+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer manual__2025-12-14T18:42:36.516803+00:00 [queued]>
+[2025-12-14T18:42:44.415+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer manual__2025-12-14T18:42:36.516803+00:00 [queued]>
+[2025-12-14T18:42:44.416+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-12-14T18:42:44.491+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): run_batch_layer> on 2025-12-14 18:42:36.516803+00:00
+[2025-12-14T18:42:44.497+0000] {standard_task_runner.py:57} INFO - Started process 301 to run task
+[2025-12-14T18:42:44.503+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'run_batch_layer', 'manual__2025-12-14T18:42:36.516803+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/exchange_rates_batch_dag.py', '--cfg-path', '/tmp/tmphbk649m6']
+[2025-12-14T18:42:44.511+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask run_batch_layer
+[2025-12-14T18:42:44.742+0000] {task_command.py:410} INFO - Running <TaskInstance: batch_layer_pipeline.run_batch_layer manual__2025-12-14T18:42:36.516803+00:00 [running]> on host 5c34b1e03bae
+[2025-12-14T18:42:45.649+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T18:42:36.516803+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-14T18:42:36.516803+00:00'
+[2025-12-14T18:42:45.651+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T18:42:45.652+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        docker exec spark-master         /opt/spark/bin/spark-submit         --master spark://spark-master:7077         --driver-memory 1g         --executor-memory 1g         --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.spark:spark-avro_2.12:3.5.0         /opt/spark/jobs/batch_layer.py\n        ']
+[2025-12-14T18:42:45.663+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T18:42:45.719+0000] {subprocess.py:93} INFO - Error response from daemon: client version 1.41 is too old. Minimum supported API version is 1.44, please upgrade your client to a newer version
+[2025-12-14T18:42:45.721+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-14T18:42:45.741+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-14T18:42:45.752+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=batch_layer_pipeline, task_id=run_batch_layer, execution_date=20251214T184236, start_date=20251214T184244, end_date=20251214T184245
+[2025-12-14T18:42:45.784+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 12 for task run_batch_layer (Bash command failed. The command returned a non-zero exit code 1.; 301)
+[2025-12-14T18:42:45.827+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-12-14T18:42:45.904+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

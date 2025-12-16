@@ -1,0 +1,25 @@
+[2025-12-14T16:36:00.349+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: exchange_rates_batch_layer.spark_batch_layer manual__2025-12-14T16:35:52.511362+00:00 [queued]>
+[2025-12-14T16:36:00.360+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: exchange_rates_batch_layer.spark_batch_layer manual__2025-12-14T16:35:52.511362+00:00 [queued]>
+[2025-12-14T16:36:00.361+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-12-14T16:36:00.409+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): spark_batch_layer> on 2025-12-14 16:35:52.511362+00:00
+[2025-12-14T16:36:00.412+0000] {standard_task_runner.py:57} INFO - Started process 573 to run task
+[2025-12-14T16:36:00.417+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'exchange_rates_batch_layer', 'spark_batch_layer', 'manual__2025-12-14T16:35:52.511362+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/exchange_rates_batch_dag.py', '--cfg-path', '/tmp/tmpw6pfbxt2']
+[2025-12-14T16:36:00.422+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask spark_batch_layer
+[2025-12-14T16:36:00.530+0000] {task_command.py:410} INFO - Running <TaskInstance: exchange_rates_batch_layer.spark_batch_layer manual__2025-12-14T16:35:52.511362+00:00 [running]> on host 0a6cd546f6b5
+[2025-12-14T16:36:00.672+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='exchange_rates_batch_layer' AIRFLOW_CTX_TASK_ID='spark_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T16:35:52.511362+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-14T16:35:52.511362+00:00'
+[2025-12-14T16:36:00.678+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2025-12-14T16:36:00.680+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.yarn.appMasterEnv.JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py
+[2025-12-14T16:36:00.842+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-12-14T16:36:00.844+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/bin/spark-class: line 71: /usr/lib/jvm/java-11-openjdk-amd64/bin/java: No such file or directory
+[2025-12-14T16:36:00.845+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/bin/spark-class: line 97: CMD: bad array subscript
+[2025-12-14T16:36:00.865+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py. Error code is: 1.
+[2025-12-14T16:36:00.874+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=exchange_rates_batch_layer, task_id=spark_batch_layer, execution_date=20251214T163552, start_date=20251214T163600, end_date=20251214T163600
+[2025-12-14T16:36:00.926+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 3 for task spark_batch_layer (Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py. Error code is: 1.; 573)
+[2025-12-14T16:36:00.951+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-12-14T16:36:01.011+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

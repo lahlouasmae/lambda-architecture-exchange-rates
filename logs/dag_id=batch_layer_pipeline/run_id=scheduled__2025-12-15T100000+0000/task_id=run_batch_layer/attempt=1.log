@@ -1,0 +1,245 @@
+[2025-12-15T11:00:12.293+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-15T11:00:12.371+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-15T10:00:00+00:00 [queued]>
+[2025-12-15T11:00:12.406+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-15T10:00:00+00:00 [queued]>
+[2025-12-15T11:00:12.438+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2025-12-15T11:00:12.503+0000] {taskinstance.py:2879} INFO - Executing <Task(BashOperator): run_batch_layer> on 2025-12-15 10:00:00+00:00
+[2025-12-15T11:00:12.512+0000] {standard_task_runner.py:72} INFO - Started process 357 to run task
+[2025-12-15T11:00:12.529+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'run_batch_layer', 'scheduled__2025-12-15T10:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/batch_pipeline_dag.py', '--cfg-path', '/tmp/tmpyqfq_wrh']
+[2025-12-15T11:00:12.532+0000] {standard_task_runner.py:105} INFO - Job 11: Subtask run_batch_layer
+[2025-12-15T11:00:12.617+0000] {task_command.py:467} INFO - Running <TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-15T10:00:00+00:00 [running]> on host 79e4a0297251
+[2025-12-15T11:00:12.796+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-15T10:00:00+00:00'
+[2025-12-15T11:00:12.798+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-12-15T11:00:12.855+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-15T11:00:12.857+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec spark-master         /opt/spark/bin/spark-submit         --master spark://spark-master:7077         --driver-memory 1g         --executor-memory 1g         --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.spark:spark-avro_2.12:3.5.0         /opt/spark/jobs/batch_layer.py\n        ']
+[2025-12-15T11:00:12.872+0000] {subprocess.py:86} INFO - Output:
+[2025-12-15T11:00:22.644+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-12-15T11:00:22.992+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/spark/.ivy2/cache
+[2025-12-15T11:00:22.993+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/spark/.ivy2/jars
+[2025-12-15T11:00:23.009+0000] {subprocess.py:93} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2025-12-15T11:00:23.010+0000] {subprocess.py:93} INFO - org.apache.spark#spark-avro_2.12 added as a dependency
+[2025-12-15T11:00:23.015+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-a5c0c924-8450-422b-9829-464320db1dfd;1.0
+[2025-12-15T11:00:23.016+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-15T11:00:23.452+0000] {subprocess.py:93} INFO - 	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0 in central
+[2025-12-15T11:00:23.579+0000] {subprocess.py:93} INFO - 	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0 in central
+[2025-12-15T11:00:23.638+0000] {subprocess.py:93} INFO - 	found org.apache.kafka#kafka-clients;3.4.1 in central
+[2025-12-15T11:00:23.730+0000] {subprocess.py:93} INFO - 	found org.lz4#lz4-java;1.8.0 in central
+[2025-12-15T11:00:23.785+0000] {subprocess.py:93} INFO - 	found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2025-12-15T11:00:23.818+0000] {subprocess.py:93} INFO - 	found org.slf4j#slf4j-api;2.0.7 in central
+[2025-12-15T11:00:23.863+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2025-12-15T11:00:23.948+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2025-12-15T11:00:24.023+0000] {subprocess.py:93} INFO - 	found commons-logging#commons-logging;1.1.3 in central
+[2025-12-15T11:00:24.071+0000] {subprocess.py:93} INFO - 	found com.google.code.findbugs#jsr305;3.0.0 in central
+[2025-12-15T11:00:24.112+0000] {subprocess.py:93} INFO - 	found org.apache.commons#commons-pool2;2.11.1 in central
+[2025-12-15T11:00:24.172+0000] {subprocess.py:93} INFO - 	found org.apache.spark#spark-avro_2.12;3.5.0 in central
+[2025-12-15T11:00:24.195+0000] {subprocess.py:93} INFO - 	found org.tukaani#xz;1.9 in central
+[2025-12-15T11:00:24.257+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 1207ms :: artifacts dl 32ms
+[2025-12-15T11:00:24.260+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-12-15T11:00:24.262+0000] {subprocess.py:93} INFO - 	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2025-12-15T11:00:24.264+0000] {subprocess.py:93} INFO - 	commons-logging#commons-logging;1.1.3 from central in [default]
+[2025-12-15T11:00:24.265+0000] {subprocess.py:93} INFO - 	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2025-12-15T11:00:24.266+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+[2025-12-15T11:00:24.266+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+[2025-12-15T11:00:24.268+0000] {subprocess.py:93} INFO - 	org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+[2025-12-15T11:00:24.268+0000] {subprocess.py:93} INFO - 	org.apache.spark#spark-avro_2.12;3.5.0 from central in [default]
+[2025-12-15T11:00:24.270+0000] {subprocess.py:93} INFO - 	org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0 from central in [default]
+[2025-12-15T11:00:24.271+0000] {subprocess.py:93} INFO - 	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0 from central in [default]
+[2025-12-15T11:00:24.272+0000] {subprocess.py:93} INFO - 	org.lz4#lz4-java;1.8.0 from central in [default]
+[2025-12-15T11:00:24.273+0000] {subprocess.py:93} INFO - 	org.slf4j#slf4j-api;2.0.7 from central in [default]
+[2025-12-15T11:00:24.274+0000] {subprocess.py:93} INFO - 	org.tukaani#xz;1.9 from central in [default]
+[2025-12-15T11:00:24.274+0000] {subprocess.py:93} INFO - 	org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+[2025-12-15T11:00:24.275+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-15T11:00:24.276+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-12-15T11:00:24.277+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-12-15T11:00:24.278+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-15T11:00:24.278+0000] {subprocess.py:93} INFO - 	|      default     |   13  |   0   |   0   |   0   ||   13  |   0   |
+[2025-12-15T11:00:24.279+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-15T11:00:24.281+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-a5c0c924-8450-422b-9829-464320db1dfd
+[2025-12-15T11:00:24.282+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-15T11:00:24.301+0000] {subprocess.py:93} INFO - 	0 artifacts copied, 13 already retrieved (0kB/19ms)
+[2025-12-15T11:00:24.886+0000] {subprocess.py:93} INFO - 25/12/15 11:00:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-12-15T11:00:28.761+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO SparkContext: Running Spark version 3.5.0
+[2025-12-15T11:00:28.763+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-12-15T11:00:28.765+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO SparkContext: Java version 11.0.20.1
+[2025-12-15T11:00:28.811+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO ResourceUtils: ==============================================================
+[2025-12-15T11:00:28.813+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-12-15T11:00:28.815+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO ResourceUtils: ==============================================================
+[2025-12-15T11:00:28.817+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO SparkContext: Submitted application: ExchangeRatesBatchLayer
+[2025-12-15T11:00:28.866+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-12-15T11:00:28.895+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO ResourceProfile: Limiting resource is cpu
+[2025-12-15T11:00:28.898+0000] {subprocess.py:93} INFO - 25/12/15 11:00:28 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-12-15T11:00:29.032+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SecurityManager: Changing view acls to: spark
+[2025-12-15T11:00:29.033+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SecurityManager: Changing modify acls to: spark
+[2025-12-15T11:00:29.035+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SecurityManager: Changing view acls groups to:
+[2025-12-15T11:00:29.036+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SecurityManager: Changing modify acls groups to:
+[2025-12-15T11:00:29.040+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2025-12-15T11:00:29.618+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO Utils: Successfully started service 'sparkDriver' on port 43499.
+[2025-12-15T11:00:29.753+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SparkEnv: Registering MapOutputTracker
+[2025-12-15T11:00:29.929+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SparkEnv: Registering BlockManagerMaster
+[2025-12-15T11:00:29.975+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-12-15T11:00:29.977+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-12-15T11:00:29.987+0000] {subprocess.py:93} INFO - 25/12/15 11:00:29 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-12-15T11:00:30.086+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b8455ba8-26d1-437b-b3db-f9ca58298961
+[2025-12-15T11:00:30.128+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-12-15T11:00:30.167+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-12-15T11:00:30.506+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-12-15T11:00:30.606+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2025-12-15T11:00:30.618+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+[2025-12-15T11:00:30.705+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar at spark://b454207e355c:43499/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.706+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar at spark://b454207e355c:43499/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.709+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar at spark://b454207e355c:43499/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.711+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at spark://b454207e355c:43499/jars/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.712+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://b454207e355c:43499/jars/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.714+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://b454207e355c:43499/jars/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.719+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at spark://b454207e355c:43499/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.723+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://b454207e355c:43499/jars/org.lz4_lz4-java-1.8.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.724+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar at spark://b454207e355c:43499/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.725+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at spark://b454207e355c:43499/jars/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.727+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at spark://b454207e355c:43499/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.728+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://b454207e355c:43499/jars/commons-logging_commons-logging-1.1.3.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.729+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.tukaani_xz-1.9.jar at spark://b454207e355c:43499/jars/org.tukaani_xz-1.9.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.731+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar at spark://b454207e355c:43499/files/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.733+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.apache.spark_spark-sql-kafka-0-10_2.12-3.5.0.jar
+[2025-12-15T11:00:30.783+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar at spark://b454207e355c:43499/files/org.apache.spark_spark-avro_2.12-3.5.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.785+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.apache.spark_spark-avro_2.12-3.5.0.jar
+[2025-12-15T11:00:30.798+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar at spark://b454207e355c:43499/files/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.800+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.5.0.jar
+[2025-12-15T11:00:30.815+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar at spark://b454207e355c:43499/files/org.apache.kafka_kafka-clients-3.4.1.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.820+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.kafka_kafka-clients-3.4.1.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.apache.kafka_kafka-clients-3.4.1.jar
+[2025-12-15T11:00:30.880+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar at spark://b454207e355c:43499/files/com.google.code.findbugs_jsr305-3.0.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.881+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Copying /home/spark/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.0.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/com.google.code.findbugs_jsr305-3.0.0.jar
+[2025-12-15T11:00:30.892+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar at spark://b454207e355c:43499/files/org.apache.commons_commons-pool2-2.11.1.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.893+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.11.1.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.apache.commons_commons-pool2-2.11.1.jar
+[2025-12-15T11:00:30.903+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar at spark://b454207e355c:43499/files/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar with timestamp 1765796428739
+[2025-12-15T11:00:30.903+0000] {subprocess.py:93} INFO - 25/12/15 11:00:30 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.apache.hadoop_hadoop-client-runtime-3.3.4.jar
+[2025-12-15T11:00:31.057+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar at spark://b454207e355c:43499/files/org.lz4_lz4-java-1.8.0.jar with timestamp 1765796428739
+[2025-12-15T11:00:31.059+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO Utils: Copying /home/spark/.ivy2/jars/org.lz4_lz4-java-1.8.0.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.lz4_lz4-java-1.8.0.jar
+[2025-12-15T11:00:31.073+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar at spark://b454207e355c:43499/files/org.xerial.snappy_snappy-java-1.1.10.3.jar with timestamp 1765796428739
+[2025-12-15T11:00:31.074+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO Utils: Copying /home/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.10.3.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.xerial.snappy_snappy-java-1.1.10.3.jar
+[2025-12-15T11:00:31.097+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar at spark://b454207e355c:43499/files/org.slf4j_slf4j-api-2.0.7.jar with timestamp 1765796428739
+[2025-12-15T11:00:31.098+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO Utils: Copying /home/spark/.ivy2/jars/org.slf4j_slf4j-api-2.0.7.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.slf4j_slf4j-api-2.0.7.jar
+[2025-12-15T11:00:31.115+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar at spark://b454207e355c:43499/files/org.apache.hadoop_hadoop-client-api-3.3.4.jar with timestamp 1765796428739
+[2025-12-15T11:00:31.117+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.hadoop_hadoop-client-api-3.3.4.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.apache.hadoop_hadoop-client-api-3.3.4.jar
+[2025-12-15T11:00:31.307+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar at spark://b454207e355c:43499/files/commons-logging_commons-logging-1.1.3.jar with timestamp 1765796428739
+[2025-12-15T11:00:31.309+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO Utils: Copying /home/spark/.ivy2/jars/commons-logging_commons-logging-1.1.3.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/commons-logging_commons-logging-1.1.3.jar
+[2025-12-15T11:00:31.318+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.tukaani_xz-1.9.jar at spark://b454207e355c:43499/files/org.tukaani_xz-1.9.jar with timestamp 1765796428739
+[2025-12-15T11:00:31.318+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO Utils: Copying /home/spark/.ivy2/jars/org.tukaani_xz-1.9.jar to /tmp/spark-11f0dba1-4dd4-43c5-a875-dbf72b7aa55d/userFiles-ff03d7f6-3b2c-450d-86dd-dc6943558376/org.tukaani_xz-1.9.jar
+[2025-12-15T11:00:31.538+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-12-15T11:00:31.704+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.7:7077 after 99 ms (0 ms spent in bootstraps)
+[2025-12-15T11:00:31.918+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20251215110031-0007
+[2025-12-15T11:00:31.949+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42491.
+[2025-12-15T11:00:31.954+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO NettyBlockTransferService: Server created on b454207e355c:42491
+[2025-12-15T11:00:31.960+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-12-15T11:00:31.987+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, b454207e355c, 42491, None)
+[2025-12-15T11:00:31.998+0000] {subprocess.py:93} INFO - 25/12/15 11:00:31 INFO BlockManagerMasterEndpoint: Registering block manager b454207e355c:42491 with 434.4 MiB RAM, BlockManagerId(driver, b454207e355c, 42491, None)
+[2025-12-15T11:00:32.004+0000] {subprocess.py:93} INFO - 25/12/15 11:00:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, b454207e355c, 42491, None)
+[2025-12-15T11:00:32.010+0000] {subprocess.py:93} INFO - 25/12/15 11:00:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, b454207e355c, 42491, None)
+[2025-12-15T11:00:32.617+0000] {subprocess.py:93} INFO - 25/12/15 11:00:32 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-12-15T11:00:33.613+0000] {subprocess.py:93} INFO - 🔍 Starting Batch Layer...
+[2025-12-15T11:00:33.614+0000] {subprocess.py:93} INFO - 🔍 Spark Version: 3.5.0
+[2025-12-15T11:00:33.614+0000] {subprocess.py:93} INFO - 🔍 Attempting to connect to Kafka at kafka:29092...
+[2025-12-15T11:00:39.477+0000] {subprocess.py:93} INFO - ✅ Successfully connected to Kafka!
+[2025-12-15T11:00:39.478+0000] {subprocess.py:93} INFO - 🔍 Kafka DataFrame schema:
+[2025-12-15T11:00:39.508+0000] {subprocess.py:93} INFO - root
+[2025-12-15T11:00:39.509+0000] {subprocess.py:93} INFO -  |-- key: binary (nullable = true)
+[2025-12-15T11:00:39.510+0000] {subprocess.py:93} INFO -  |-- value: binary (nullable = true)
+[2025-12-15T11:00:39.510+0000] {subprocess.py:93} INFO -  |-- topic: string (nullable = true)
+[2025-12-15T11:00:39.511+0000] {subprocess.py:93} INFO -  |-- partition: integer (nullable = true)
+[2025-12-15T11:00:39.512+0000] {subprocess.py:93} INFO -  |-- offset: long (nullable = true)
+[2025-12-15T11:00:39.513+0000] {subprocess.py:93} INFO -  |-- timestamp: timestamp (nullable = true)
+[2025-12-15T11:00:39.514+0000] {subprocess.py:93} INFO -  |-- timestampType: integer (nullable = true)
+[2025-12-15T11:00:39.515+0000] {subprocess.py:93} INFO - 
+[2025-12-15T11:00:41.125+0000] {subprocess.py:93} INFO - 25/12/15 11:00:41 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, max.poll.interval.ms, session.timeout.ms, auto.offset.reset]' were supplied but are not used yet.
+[2025-12-15T11:00:59.885+0000] {subprocess.py:93} INFO - 25/12/15 11:00:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:01:14.869+0000] {subprocess.py:93} INFO - 25/12/15 11:01:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:01:29.880+0000] {subprocess.py:93} INFO - 25/12/15 11:01:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:01:44.868+0000] {subprocess.py:93} INFO - 25/12/15 11:01:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:01:59.869+0000] {subprocess.py:93} INFO - 25/12/15 11:01:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:02:14.877+0000] {subprocess.py:93} INFO - 25/12/15 11:02:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:02:29.870+0000] {subprocess.py:93} INFO - 25/12/15 11:02:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:02:44.871+0000] {subprocess.py:93} INFO - 25/12/15 11:02:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:02:59.869+0000] {subprocess.py:93} INFO - 25/12/15 11:02:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:03:14.873+0000] {subprocess.py:93} INFO - 25/12/15 11:03:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:03:29.869+0000] {subprocess.py:93} INFO - 25/12/15 11:03:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:03:44.868+0000] {subprocess.py:93} INFO - 25/12/15 11:03:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:03:59.869+0000] {subprocess.py:93} INFO - 25/12/15 11:03:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:04:14.869+0000] {subprocess.py:93} INFO - 25/12/15 11:04:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:04:29.881+0000] {subprocess.py:93} INFO - 25/12/15 11:04:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:04:44.875+0000] {subprocess.py:93} INFO - 25/12/15 11:04:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:04:59.872+0000] {subprocess.py:93} INFO - 25/12/15 11:04:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:05:14.905+0000] {subprocess.py:93} INFO - 25/12/15 11:05:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:05:29.882+0000] {subprocess.py:93} INFO - 25/12/15 11:05:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:05:44.870+0000] {subprocess.py:93} INFO - 25/12/15 11:05:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:05:59.874+0000] {subprocess.py:93} INFO - 25/12/15 11:05:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:06:14.874+0000] {subprocess.py:93} INFO - 25/12/15 11:06:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:06:29.879+0000] {subprocess.py:93} INFO - 25/12/15 11:06:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:06:44.932+0000] {subprocess.py:93} INFO - 25/12/15 11:06:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:06:59.879+0000] {subprocess.py:93} INFO - 25/12/15 11:06:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:07:14.895+0000] {subprocess.py:93} INFO - 25/12/15 11:07:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:07:29.873+0000] {subprocess.py:93} INFO - 25/12/15 11:07:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:07:44.868+0000] {subprocess.py:93} INFO - 25/12/15 11:07:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:07:59.910+0000] {subprocess.py:93} INFO - 25/12/15 11:07:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:08:14.874+0000] {subprocess.py:93} INFO - 25/12/15 11:08:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:08:29.870+0000] {subprocess.py:93} INFO - 25/12/15 11:08:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:08:44.870+0000] {subprocess.py:93} INFO - 25/12/15 11:08:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:08:59.870+0000] {subprocess.py:93} INFO - 25/12/15 11:08:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:09:14.873+0000] {subprocess.py:93} INFO - 25/12/15 11:09:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:09:29.875+0000] {subprocess.py:93} INFO - 25/12/15 11:09:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:09:44.873+0000] {subprocess.py:93} INFO - 25/12/15 11:09:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:09:59.872+0000] {subprocess.py:93} INFO - 25/12/15 11:09:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:10:14.870+0000] {subprocess.py:93} INFO - 25/12/15 11:10:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:10:29.875+0000] {subprocess.py:93} INFO - 25/12/15 11:10:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:10:44.878+0000] {subprocess.py:93} INFO - 25/12/15 11:10:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:10:59.869+0000] {subprocess.py:93} INFO - 25/12/15 11:10:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:11:14.880+0000] {subprocess.py:93} INFO - 25/12/15 11:11:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:11:29.879+0000] {subprocess.py:93} INFO - 25/12/15 11:11:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:11:44.872+0000] {subprocess.py:93} INFO - 25/12/15 11:11:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:11:59.873+0000] {subprocess.py:93} INFO - 25/12/15 11:11:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:12:14.882+0000] {subprocess.py:93} INFO - 25/12/15 11:12:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:12:29.887+0000] {subprocess.py:93} INFO - 25/12/15 11:12:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:12:44.899+0000] {subprocess.py:93} INFO - 25/12/15 11:12:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:12:59.874+0000] {subprocess.py:93} INFO - 25/12/15 11:12:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:13:14.872+0000] {subprocess.py:93} INFO - 25/12/15 11:13:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:13:29.873+0000] {subprocess.py:93} INFO - 25/12/15 11:13:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:13:44.879+0000] {subprocess.py:93} INFO - 25/12/15 11:13:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:13:59.872+0000] {subprocess.py:93} INFO - 25/12/15 11:13:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:14:14.891+0000] {subprocess.py:93} INFO - 25/12/15 11:14:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:14:29.877+0000] {subprocess.py:93} INFO - 25/12/15 11:14:29 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:14:44.872+0000] {subprocess.py:93} INFO - 25/12/15 11:14:44 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:14:59.888+0000] {subprocess.py:93} INFO - 25/12/15 11:14:59 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:15:17.947+0000] {subprocess.py:93} INFO - 25/12/15 11:15:14 WARN TaskSchedulerImpl: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+[2025-12-15T11:29:59.503+0000] {job.py:229} INFO - Heartbeat recovered after 895.06 seconds
+[2025-12-15T11:29:59.719+0000] {local_task_job_runner.py:223} ERROR - Heartbeat time limit exceeded!
+[2025-12-15T11:29:59.801+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2025-12-15T11:29:59.928+0000] {process_utils.py:132} INFO - Sending 15 to group 357. PIDs of all processes in the group: [359, 360, 357]
+[2025-12-15T11:30:00.076+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 357
+[2025-12-15T11:30:00.233+0000] {taskinstance.py:3083} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-15T11:30:00.364+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2025-12-15T11:30:00.538+0000] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 240, in execute
+    result = self.subprocess_hook.run_command(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3085, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-12-15T11:30:00.751+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=batch_layer_pipeline, task_id=run_batch_layer, run_id=scheduled__2025-12-15T10:00:00+00:00, execution_date=20251215T100000, start_date=20251215T110012, end_date=20251215T113000
+[2025-12-15T11:30:00.906+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=360, status='terminated', started='11:00:12') (360) terminated with exit code None
+[2025-12-15T11:30:01.113+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-12-15T11:30:01.274+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=359, status='terminated', started='11:00:12') (359) terminated with exit code None
+[2025-12-15T11:30:01.380+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=357, status='terminated', exitcode=2, started='11:00:11') (357) terminated with exit code 2
+[2025-12-15T11:30:04.837+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics

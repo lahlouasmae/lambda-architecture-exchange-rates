@@ -1,0 +1,42 @@
+[2025-12-15T09:33:26.263+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-15T09:33:26.317+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.log_success scheduled__2025-12-15T08:00:00+00:00 [queued]>
+[2025-12-15T09:33:26.340+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.log_success scheduled__2025-12-15T08:00:00+00:00 [queued]>
+[2025-12-15T09:33:26.341+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2025-12-15T09:33:26.363+0000] {taskinstance.py:2879} INFO - Executing <Task(BashOperator): log_success> on 2025-12-15 08:00:00+00:00
+[2025-12-15T09:33:26.369+0000] {standard_task_runner.py:72} INFO - Started process 492 to run task
+[2025-12-15T09:33:26.374+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'log_success', 'scheduled__2025-12-15T08:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/batch_pipeline_dag.py', '--cfg-path', '/tmp/tmpyv672qhh']
+[2025-12-15T09:33:26.377+0000] {standard_task_runner.py:105} INFO - Job 20: Subtask log_success
+[2025-12-15T09:33:26.438+0000] {task_command.py:467} INFO - Running <TaskInstance: batch_layer_pipeline.log_success scheduled__2025-12-15T08:00:00+00:00 [running]> on host 137ed86f2410
+[2025-12-15T09:33:26.602+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='log_success' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-15T08:00:00+00:00'
+[2025-12-15T09:33:26.604+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-12-15T09:33:26.650+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-15T09:33:26.653+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "✅ Batch layer pipeline completed successfully at $(date)"']
+[2025-12-15T09:33:26.671+0000] {subprocess.py:86} INFO - Output:
+[2025-12-15T09:33:26.679+0000] {subprocess.py:93} INFO - ✅ Batch layer pipeline completed successfully at Mon Dec 15 09:33:26 UTC 2025
+[2025-12-15T09:33:26.681+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-15T09:33:26.723+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-12-15T09:33:26.725+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=batch_layer_pipeline, task_id=log_success, run_id=scheduled__2025-12-15T08:00:00+00:00, execution_date=20251215T080000, start_date=20251215T093326, end_date=20251215T093326
+[2025-12-15T09:33:26.789+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2025-12-15T09:33:26.820+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-15T09:33:26.823+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2025-12-15T09:41:28.620+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-15T09:41:28.682+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.log_success scheduled__2025-12-15T08:00:00+00:00 [queued]>
+[2025-12-15T09:41:28.723+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.log_success scheduled__2025-12-15T08:00:00+00:00 [queued]>
+[2025-12-15T09:41:28.727+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2025-12-15T09:41:28.806+0000] {taskinstance.py:2879} INFO - Executing <Task(BashOperator): log_success> on 2025-12-15 08:00:00+00:00
+[2025-12-15T09:41:28.820+0000] {standard_task_runner.py:72} INFO - Started process 133 to run task
+[2025-12-15T09:41:28.833+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'log_success', 'scheduled__2025-12-15T08:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/batch_pipeline_dag.py', '--cfg-path', '/tmp/tmplgfbjjz5']
+[2025-12-15T09:41:28.838+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask log_success
+[2025-12-15T09:41:28.971+0000] {task_command.py:467} INFO - Running <TaskInstance: batch_layer_pipeline.log_success scheduled__2025-12-15T08:00:00+00:00 [running]> on host 79e4a0297251
+[2025-12-15T09:41:29.258+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='log_success' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-15T08:00:00+00:00'
+[2025-12-15T09:41:29.261+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-12-15T09:41:29.315+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-15T09:41:29.320+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "✅ Batch layer pipeline completed successfully at $(date)"']
+[2025-12-15T09:41:29.352+0000] {subprocess.py:86} INFO - Output:
+[2025-12-15T09:41:29.362+0000] {subprocess.py:93} INFO - ✅ Batch layer pipeline completed successfully at Mon Dec 15 09:41:29 UTC 2025
+[2025-12-15T09:41:29.363+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-15T09:41:29.430+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-12-15T09:41:29.431+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=batch_layer_pipeline, task_id=log_success, run_id=scheduled__2025-12-15T08:00:00+00:00, execution_date=20251215T080000, start_date=20251215T094128, end_date=20251215T094129
+[2025-12-15T09:41:29.529+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2025-12-15T09:41:29.569+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-15T09:41:29.572+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

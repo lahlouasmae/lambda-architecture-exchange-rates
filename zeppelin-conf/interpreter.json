@@ -1,0 +1,95 @@
+{
+  "interpreterSettings": {
+    "spark": {
+      "id": "spark",
+      "name": "spark",
+      "group": "spark",
+      "properties": {
+        "spark.app.name": {
+          "name": "spark.app.name",
+          "value": "Zeppelin",
+          "type": "string"
+        },
+        "spark.executor.memory": {
+          "name": "spark.executor.memory",
+          "value": "1g",
+          "type": "string"
+        },
+        "spark.jars.packages": {
+          "name": "spark.jars.packages",
+          "value": "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.spark:spark-avro_2.12:3.5.0",
+          "type": "string"
+        },
+        "zeppelin.spark.useHiveContext": {
+          "name": "zeppelin.spark.useHiveContext",
+          "value": "true",
+          "type": "checkbox"
+        },
+        "zeppelin.spark.maxResult": {
+          "name": "zeppelin.spark.maxResult",
+          "value": "1000",
+          "type": "number"
+        },
+        "master": {
+          "name": "master",
+          "value": "spark://spark-master:7077",
+          "type": "string"
+        },
+        "spark.cores.max": {
+          "name": "spark.cores.max",
+          "value": "2",
+          "type": "string"
+        },
+        "spark.sql.catalogImplementation": {
+          "name": "spark.sql.catalogImplementation",
+          "value": "hive",
+          "type": "string"
+        },
+        "spark.sql.warehouse.dir": {
+          "name": "spark.sql.warehouse.dir",
+          "value": "/user/hive/warehouse",
+          "type": "string"
+        },
+        "spark.hadoop.hive.metastore.uris": {
+          "name": "spark.hadoop.hive.metastore.uris",
+          "value": "thrift://hive-metastore:9083",
+          "type": "string"
+        },
+        "SPARK_HOME": {
+          "name": "SPARK_HOME",
+          "value": "/opt/spark",
+          "type": "string"
+        }
+      },
+      "status": "READY",
+      "interpreterGroup": [
+        {
+          "name": "spark",
+          "class": "org.apache.zeppelin.spark.SparkInterpreter",
+          "defaultInterpreter": true
+        },
+        {
+          "name": "sql",
+          "class": "org.apache.zeppelin.spark.SparkSqlInterpreter",
+          "defaultInterpreter": false
+        },
+        {
+          "name": "pyspark",
+          "class": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "defaultInterpreter": false
+        }
+      ],
+      "dependencies": [],
+      "option": {
+        "remote": true,
+        "port": -1,
+        "perNote": "shared",
+        "perUser": "shared",
+        "isExistingProcess": false,
+        "setPermission": false,
+        "owners": [],
+        "isUserImpersonate": false
+      }
+    }
+  }
+}

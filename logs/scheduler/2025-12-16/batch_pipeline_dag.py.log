@@ -1,0 +1,218 @@
+[2025-12-16T14:35:41.343+0000] {processor.py:186} INFO - Started process (PID=40) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:35:41.350+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:35:41.355+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:35:41.354+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:35:41.577+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:35:42.664+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:35:42.663+0000] {override.py:1858} INFO - Created Permission View: can edit on DAG:exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:35:42.761+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:35:42.760+0000] {override.py:1858} INFO - Created Permission View: can delete on DAG:exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:35:42.971+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:35:42.971+0000] {override.py:1858} INFO - Created Permission View: can read on DAG:exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:35:43.002+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:35:43.002+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:35:43.369+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:35:43.283+0000] {dag.py:3234} INFO - Creating ORM DAG for exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:35:43.494+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:35:43.487+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:35:47.723+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 6.406 seconds
+[2025-12-16T14:38:52.667+0000] {processor.py:186} INFO - Started process (PID=39) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:38:52.670+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:38:52.678+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:38:52.677+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:38:52.761+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:38:53.415+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:38:53.410+0000] {override.py:1858} INFO - Created Permission View: can edit on DAG:exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:38:53.526+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:38:53.525+0000] {override.py:1858} INFO - Created Permission View: can read on DAG:exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:38:53.576+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:38:53.570+0000] {override.py:1858} INFO - Created Permission View: can delete on DAG:exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:38:53.578+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:38:53.577+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:38:53.628+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:38:53.628+0000] {dag.py:3234} INFO - Creating ORM DAG for exchange_rates_batch_and_verify_hdfs
+[2025-12-16T14:38:53.646+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:38:53.646+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:38:53.958+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 1.307 seconds
+[2025-12-16T14:39:24.448+0000] {processor.py:186} INFO - Started process (PID=44) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:39:24.453+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:39:24.468+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:39:24.467+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:39:24.527+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:39:24.616+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:39:24.615+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:39:24.748+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:39:24.747+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:39:24.815+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.390 seconds
+[2025-12-16T14:39:55.552+0000] {processor.py:186} INFO - Started process (PID=47) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:39:55.575+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:39:55.611+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:39:55.609+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:39:55.958+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:39:56.086+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:39:56.085+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:39:56.319+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:39:56.319+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:39:56.523+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 1.101 seconds
+[2025-12-16T14:40:27.048+0000] {processor.py:186} INFO - Started process (PID=57) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:40:27.051+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:40:27.064+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:40:27.063+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:40:27.147+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:40:27.205+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:40:27.204+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:40:27.268+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:40:27.267+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:40:27.348+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.323 seconds
+[2025-12-16T14:40:57.527+0000] {processor.py:186} INFO - Started process (PID=58) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:40:57.529+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:40:57.535+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:40:57.534+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:40:57.618+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:40:57.699+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:40:57.698+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:40:57.764+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:40:57.764+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:40:57.816+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.304 seconds
+[2025-12-16T14:41:28.027+0000] {processor.py:186} INFO - Started process (PID=59) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:41:28.029+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:41:28.034+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:41:28.033+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:41:28.075+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:41:28.135+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:41:28.134+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:41:28.200+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:41:28.200+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:41:28.241+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.224 seconds
+[2025-12-16T14:41:58.909+0000] {processor.py:186} INFO - Started process (PID=60) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:41:58.920+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:41:58.927+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:41:58.926+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:41:59.013+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:41:59.062+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:41:59.062+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:41:59.117+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:41:59.116+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:41:59.165+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.279 seconds
+[2025-12-16T14:42:29.670+0000] {processor.py:186} INFO - Started process (PID=61) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:42:29.672+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:42:29.677+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:42:29.676+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:42:29.716+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:42:29.789+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:42:29.788+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:42:29.857+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:42:29.856+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:42:29.908+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.246 seconds
+[2025-12-16T14:43:00.377+0000] {processor.py:186} INFO - Started process (PID=62) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:43:00.380+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:43:00.387+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:43:00.386+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:43:00.445+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:43:00.750+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:43:00.748+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:43:00.872+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:43:00.871+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:43:00.923+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.558 seconds
+[2025-12-16T14:43:31.278+0000] {processor.py:186} INFO - Started process (PID=63) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:43:31.279+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:43:31.291+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:43:31.284+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:43:31.366+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:43:31.436+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:43:31.436+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:43:31.541+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:43:31.541+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:43:31.622+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.370 seconds
+[2025-12-16T14:44:01.787+0000] {processor.py:186} INFO - Started process (PID=64) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:44:01.788+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:44:01.793+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:44:01.792+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:44:01.828+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:44:01.859+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:44:01.859+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:44:01.893+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:44:01.893+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:44:02.425+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.650 seconds
+[2025-12-16T14:44:32.968+0000] {processor.py:186} INFO - Started process (PID=65) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:44:32.972+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:44:32.978+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:44:32.977+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:44:33.054+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:44:33.128+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:44:33.127+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:44:33.173+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:44:33.173+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:44:33.451+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.498 seconds
+[2025-12-16T14:45:03.737+0000] {processor.py:186} INFO - Started process (PID=66) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:45:03.739+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:45:03.749+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:45:03.747+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:45:03.812+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:45:03.893+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:45:03.891+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:45:04.135+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:45:04.135+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:45:04.248+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.525 seconds
+[2025-12-16T14:45:34.861+0000] {processor.py:186} INFO - Started process (PID=67) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:45:34.864+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:45:34.880+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:45:34.879+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:45:35.046+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:45:35.139+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:45:35.139+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:45:35.696+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:45:35.691+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:45:35.763+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.928 seconds
+[2025-12-16T14:46:06.449+0000] {processor.py:186} INFO - Started process (PID=68) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:46:06.454+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:46:06.467+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:46:06.466+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:46:06.564+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:46:06.863+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:46:06.862+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:46:06.897+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:46:06.897+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:46:06.936+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.515 seconds
+[2025-12-16T14:46:38.093+0000] {processor.py:186} INFO - Started process (PID=69) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:46:38.147+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:46:38.183+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:46:38.182+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:46:38.496+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:46:39.204+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:46:39.204+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:46:39.308+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:46:39.308+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:46:39.354+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 1.311 seconds
+[2025-12-16T14:47:09.965+0000] {processor.py:186} INFO - Started process (PID=70) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:47:09.972+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:47:09.981+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:47:09.980+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:47:10.301+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:47:10.339+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:47:10.339+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:47:10.377+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:47:10.377+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:47:10.415+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.481 seconds
+[2025-12-16T14:47:40.886+0000] {processor.py:186} INFO - Started process (PID=71) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:47:40.888+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:47:40.895+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:47:40.895+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:47:40.950+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:47:41.057+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:47:41.056+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:47:41.155+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:47:41.154+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:47:41.245+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.384 seconds
+[2025-12-16T14:48:11.923+0000] {processor.py:186} INFO - Started process (PID=72) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:48:11.925+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:48:11.929+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:48:11.928+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:48:11.961+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:48:12.008+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:48:12.007+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:48:12.077+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:48:12.077+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:48:12.155+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.243 seconds
+[2025-12-16T14:48:42.636+0000] {processor.py:186} INFO - Started process (PID=73) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:48:42.639+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:48:42.646+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:48:42.645+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:48:42.713+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:48:42.764+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:48:42.763+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:48:42.826+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:48:42.825+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:48:42.905+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.286 seconds
+[2025-12-16T14:49:13.339+0000] {processor.py:186} INFO - Started process (PID=74) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:49:13.341+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:49:13.346+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:49:13.346+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:49:13.384+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:49:13.443+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:49:13.442+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:49:13.507+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:49:13.507+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:49:13.568+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.241 seconds
+[2025-12-16T14:49:44.021+0000] {processor.py:186} INFO - Started process (PID=75) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:49:44.024+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:49:44.031+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:49:44.030+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:49:44.107+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:49:44.155+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:49:44.155+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:49:44.245+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:49:44.245+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:49:44.291+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.282 seconds
+[2025-12-16T14:50:14.563+0000] {processor.py:186} INFO - Started process (PID=76) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:50:14.565+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:50:14.571+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:50:14.570+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:50:14.607+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:50:14.644+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:50:14.643+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:50:14.683+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:50:14.682+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:50:14.749+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.213 seconds
+[2025-12-16T14:50:45.135+0000] {processor.py:186} INFO - Started process (PID=77) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:50:45.138+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:50:45.145+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:50:45.144+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:50:45.221+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:50:45.310+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:50:45.309+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:50:45.417+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:50:45.416+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:50:45.552+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.438 seconds
+[2025-12-16T14:51:15.977+0000] {processor.py:186} INFO - Started process (PID=78) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:51:15.978+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:51:15.984+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:51:15.983+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:51:16.025+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:51:16.062+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:51:16.061+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:51:16.135+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:51:16.134+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:51:16.261+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.297 seconds
+[2025-12-16T14:51:46.629+0000] {processor.py:186} INFO - Started process (PID=79) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:51:46.630+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:51:46.635+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:51:46.634+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:51:46.674+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:51:46.713+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:51:46.712+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:51:46.771+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:51:46.770+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:51:46.831+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.213 seconds
+[2025-12-16T14:52:17.171+0000] {processor.py:186} INFO - Started process (PID=80) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:52:17.173+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:52:17.195+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:52:17.189+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:52:17.411+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:52:17.464+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:52:17.464+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:52:17.529+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:52:17.528+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:52:17.667+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.517 seconds
+[2025-12-16T14:52:47.867+0000] {processor.py:186} INFO - Started process (PID=81) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:52:47.869+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:52:47.873+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:52:47.873+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:52:47.920+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:52:47.959+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:52:47.958+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:52:48.002+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:52:48.002+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:52:48.051+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.198 seconds
+[2025-12-16T14:53:18.423+0000] {processor.py:186} INFO - Started process (PID=82) to work on /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:53:18.425+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/batch_pipeline_dag.py for tasks to queue
+[2025-12-16T14:53:18.436+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:53:18.434+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:53:18.505+0000] {processor.py:925} INFO - DAG(s) 'exchange_rates_batch_and_verify_hdfs' retrieved from /opt/airflow/dags/batch_pipeline_dag.py
+[2025-12-16T14:53:18.605+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:53:18.605+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-12-16T14:53:18.655+0000] {logging_mixin.py:190} INFO - [2025-12-16T14:53:18.655+0000] {dag.py:4138} INFO - Setting next_dagrun for exchange_rates_batch_and_verify_hdfs to 2025-12-15 00:00:00+00:00, run_after=2025-12-16 00:00:00+00:00
+[2025-12-16T14:53:18.699+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/batch_pipeline_dag.py took 0.288 seconds

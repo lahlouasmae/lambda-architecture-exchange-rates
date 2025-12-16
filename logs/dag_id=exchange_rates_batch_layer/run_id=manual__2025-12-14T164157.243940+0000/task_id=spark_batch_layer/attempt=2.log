@@ -1,0 +1,34 @@
+[2025-12-14T16:47:10.067+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: exchange_rates_batch_layer.spark_batch_layer manual__2025-12-14T16:41:57.243940+00:00 [queued]>
+[2025-12-14T16:47:10.078+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: exchange_rates_batch_layer.spark_batch_layer manual__2025-12-14T16:41:57.243940+00:00 [queued]>
+[2025-12-14T16:47:10.078+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-12-14T16:47:10.104+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): spark_batch_layer> on 2025-12-14 16:41:57.243940+00:00
+[2025-12-14T16:47:10.107+0000] {standard_task_runner.py:57} INFO - Started process 210 to run task
+[2025-12-14T16:47:10.111+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'exchange_rates_batch_layer', 'spark_batch_layer', 'manual__2025-12-14T16:41:57.243940+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/exchange_rates_batch_dag.py', '--cfg-path', '/tmp/tmpuryztwfw']
+[2025-12-14T16:47:10.113+0000] {standard_task_runner.py:85} INFO - Job 10: Subtask spark_batch_layer
+[2025-12-14T16:47:10.167+0000] {task_command.py:410} INFO - Running <TaskInstance: exchange_rates_batch_layer.spark_batch_layer manual__2025-12-14T16:41:57.243940+00:00 [running]> on host 0a6cd546f6b5
+[2025-12-14T16:47:10.298+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='exchange_rates_batch_layer' AIRFLOW_CTX_TASK_ID='spark_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T16:41:57.243940+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-14T16:41:57.243940+00:00'
+[2025-12-14T16:47:10.310+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2025-12-14T16:47:10.315+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master yarn --conf spark.yarn.appMasterEnv.JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py
+[2025-12-14T16:47:13.180+0000] {spark_submit.py:490} INFO - Using properties file: null
+[2025-12-14T16:47:13.479+0000] {spark_submit.py:490} INFO - Exception in thread "main" org.apache.spark.SparkException: When running with master 'yarn' either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment.
+[2025-12-14T16:47:13.486+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.error(SparkSubmitArguments.scala:650)
+[2025-12-14T16:47:13.493+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateSubmitArguments(SparkSubmitArguments.scala:281)
+[2025-12-14T16:47:13.495+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.validateArguments(SparkSubmitArguments.scala:237)
+[2025-12-14T16:47:13.499+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmitArguments.<init>(SparkSubmitArguments.scala:122)
+[2025-12-14T16:47:13.501+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2$$anon$3.<init>(SparkSubmit.scala:1094)
+[2025-12-14T16:47:13.501+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.parseArguments(SparkSubmit.scala:1094)
+[2025-12-14T16:47:13.502+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+[2025-12-14T16:47:13.503+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1111)
+[2025-12-14T16:47:13.504+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1120)
+[2025-12-14T16:47:13.504+0000] {spark_submit.py:490} INFO - at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-12-14T16:47:13.584+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py. Error code is: 1.
+[2025-12-14T16:47:13.665+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=exchange_rates_batch_layer, task_id=spark_batch_layer, execution_date=20251214T164157, start_date=20251214T164710, end_date=20251214T164713
+[2025-12-14T16:47:13.711+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 10 for task spark_batch_layer (Cannot execute: spark-submit --master yarn --conf spark.yarn.appMasterEnv.JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py. Error code is: 1.; 210)
+[2025-12-14T16:47:13.758+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-12-14T16:47:13.834+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

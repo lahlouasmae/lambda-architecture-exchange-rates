@@ -1,0 +1,162 @@
+[2025-12-14T19:11:29.965+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [queued]>
+[2025-12-14T19:11:29.974+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [queued]>
+[2025-12-14T19:11:29.975+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-12-14T19:11:29.995+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): run_batch_layer> on 2025-12-14 18:00:00+00:00
+[2025-12-14T19:11:29.998+0000] {standard_task_runner.py:57} INFO - Started process 205 to run task
+[2025-12-14T19:11:30.002+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'run_batch_layer', 'scheduled__2025-12-14T18:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/batch_pipeline_dag.py', '--cfg-path', '/tmp/tmpio2bp4l2']
+[2025-12-14T19:11:30.004+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask run_batch_layer
+[2025-12-14T19:11:30.052+0000] {task_command.py:410} INFO - Running <TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [running]> on host acf4b99cd861
+[2025-12-14T19:11:30.419+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-14T18:00:00+00:00'
+[2025-12-14T19:11:30.421+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T19:11:30.421+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        docker exec spark-master         /opt/spark/bin/spark-submit         --master spark://spark-master:7077         --driver-memory 1g         --executor-memory 1g         --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.spark:spark-avro_2.12:3.5.0         /opt/spark/jobs/batch_layer.py\n        ']
+[2025-12-14T19:11:30.428+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T19:11:30.463+0000] {subprocess.py:93} INFO - Error response from daemon: client version 1.41 is too old. Minimum supported API version is 1.44, please upgrade your client to a newer version
+[2025-12-14T19:11:30.464+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-14T19:11:30.476+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 211, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-14T19:11:30.480+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=batch_layer_pipeline, task_id=run_batch_layer, execution_date=20251214T180000, start_date=20251214T191129, end_date=20251214T191130
+[2025-12-14T19:11:30.496+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 4 for task run_batch_layer (Bash command failed. The command returned a non-zero exit code 1.; 205)
+[2025-12-14T19:11:30.535+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-12-14T19:11:30.561+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T19:26:17.608+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [queued]>
+[2025-12-14T19:26:17.616+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [queued]>
+[2025-12-14T19:26:17.617+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-12-14T19:26:17.637+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): run_batch_layer> on 2025-12-14 18:00:00+00:00
+[2025-12-14T19:26:17.641+0000] {standard_task_runner.py:60} INFO - Started process 144 to run task
+[2025-12-14T19:26:17.645+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'run_batch_layer', 'scheduled__2025-12-14T18:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/batch_pipeline_dag.py', '--cfg-path', '/tmp/tmp6cjzb91a']
+[2025-12-14T19:26:17.647+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask run_batch_layer
+[2025-12-14T19:26:17.697+0000] {task_command.py:423} INFO - Running <TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [running]> on host d6e07605b213
+[2025-12-14T19:26:17.767+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-14T18:00:00+00:00'
+[2025-12-14T19:26:17.768+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T19:26:17.769+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec spark-master         /opt/spark/bin/spark-submit         --master spark://spark-master:7077         --driver-memory 1g         --executor-memory 1g         --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.spark:spark-avro_2.12:3.5.0         /opt/spark/jobs/batch_layer.py\n        ']
+[2025-12-14T19:26:17.777+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T19:26:17.805+0000] {subprocess.py:93} INFO - Error response from daemon: client version 1.43 is too old. Minimum supported API version is 1.44, please upgrade your client to a newer version
+[2025-12-14T19:26:17.806+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-14T19:26:17.814+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-14T19:26:17.819+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=batch_layer_pipeline, task_id=run_batch_layer, execution_date=20251214T180000, start_date=20251214T192617, end_date=20251214T192617
+[2025-12-14T19:26:17.839+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5 for task run_batch_layer (Bash command failed. The command returned a non-zero exit code 1.; 144)
+[2025-12-14T19:26:17.857+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-14T19:26:17.878+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T19:56:00.616+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-14T19:56:00.648+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [queued]>
+[2025-12-14T19:56:00.665+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [queued]>
+[2025-12-14T19:56:00.667+0000] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2025-12-14T19:56:00.727+0000] {taskinstance.py:2879} INFO - Executing <Task(BashOperator): run_batch_layer> on 2025-12-14 18:00:00+00:00
+[2025-12-14T19:56:00.745+0000] {standard_task_runner.py:72} INFO - Started process 144 to run task
+[2025-12-14T19:56:00.755+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'run_batch_layer', 'scheduled__2025-12-14T18:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/batch_pipeline_dag.py', '--cfg-path', '/tmp/tmpzibtoz2_']
+[2025-12-14T19:56:00.795+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask run_batch_layer
+[2025-12-14T19:56:00.920+0000] {task_command.py:467} INFO - Running <TaskInstance: batch_layer_pipeline.run_batch_layer scheduled__2025-12-14T18:00:00+00:00 [running]> on host 3214e7074bf8
+[2025-12-14T19:56:01.047+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T18:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-14T18:00:00+00:00'
+[2025-12-14T19:56:01.048+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-12-14T19:56:01.072+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T19:56:01.073+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec spark-master         /opt/spark/bin/spark-submit         --master spark://spark-master:7077         --driver-memory 1g         --executor-memory 1g         --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.spark:spark-avro_2.12:3.5.0         /opt/spark/jobs/batch_layer.py\n        ']
+[2025-12-14T19:56:01.083+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T19:56:06.634+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-12-14T19:56:06.865+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/spark/.ivy2/cache
+[2025-12-14T19:56:06.867+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/spark/.ivy2/jars
+[2025-12-14T19:56:06.900+0000] {subprocess.py:93} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2025-12-14T19:56:06.901+0000] {subprocess.py:93} INFO - org.apache.spark#spark-avro_2.12 added as a dependency
+[2025-12-14T19:56:06.902+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-73244c90-0dbc-4b6a-9b9c-0b64f5323ef4;1.0
+[2025-12-14T19:56:06.902+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-14T19:56:12.746+0000] {subprocess.py:93} INFO - Exception in thread "main" java.io.FileNotFoundException: /home/spark/.ivy2/cache/resolved-org.apache.spark-spark-submit-parent-73244c90-0dbc-4b6a-9b9c-0b64f5323ef4-1.0.xml (No such file or directory)
+[2025-12-14T19:56:12.754+0000] {subprocess.py:93} INFO - 	at java.base/java.io.FileOutputStream.open0(Native Method)
+[2025-12-14T19:56:12.761+0000] {subprocess.py:93} INFO - 	at java.base/java.io.FileOutputStream.open(Unknown Source)
+[2025-12-14T19:56:12.762+0000] {subprocess.py:93} INFO - 	at java.base/java.io.FileOutputStream.<init>(Unknown Source)
+[2025-12-14T19:56:12.767+0000] {subprocess.py:93} INFO - 	at java.base/java.io.FileOutputStream.<init>(Unknown Source)
+[2025-12-14T19:56:12.768+0000] {subprocess.py:93} INFO - 	at org.apache.ivy.plugins.parser.xml.XmlModuleDescriptorWriter.write(XmlModuleDescriptorWriter.java:71)
+[2025-12-14T19:56:12.769+0000] {subprocess.py:93} INFO - 	at org.apache.ivy.plugins.parser.xml.XmlModuleDescriptorWriter.write(XmlModuleDescriptorWriter.java:63)
+[2025-12-14T19:56:12.783+0000] {subprocess.py:93} INFO - 	at org.apache.ivy.core.module.descriptor.DefaultModuleDescriptor.toIvyFile(DefaultModuleDescriptor.java:553)
+[2025-12-14T19:56:12.784+0000] {subprocess.py:93} INFO - 	at org.apache.ivy.core.cache.DefaultResolutionCacheManager.saveResolvedModuleDescriptor(DefaultResolutionCacheManager.java:184)
+[2025-12-14T19:56:12.785+0000] {subprocess.py:93} INFO - 	at org.apache.ivy.core.resolve.ResolveEngine.resolve(ResolveEngine.java:259)
+[2025-12-14T19:56:12.786+0000] {subprocess.py:93} INFO - 	at org.apache.ivy.Ivy.resolve(Ivy.java:522)
+[2025-12-14T19:56:12.787+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1535)
+[2025-12-14T19:56:12.788+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2025-12-14T19:56:12.788+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:334)
+[2025-12-14T19:56:12.789+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:964)
+[2025-12-14T19:56:12.790+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:194)
+[2025-12-14T19:56:12.791+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:217)
+[2025-12-14T19:56:12.792+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+[2025-12-14T19:56:12.794+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1120)
+[2025-12-14T19:56:12.795+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1129)
+[2025-12-14T19:56:12.801+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-12-14T19:56:12.820+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-14T19:56:12.838+0000] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-14T19:56:12.849+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=batch_layer_pipeline, task_id=run_batch_layer, run_id=scheduled__2025-12-14T18:00:00+00:00, execution_date=20251214T180000, start_date=20251214T195600, end_date=20251214T195612
+[2025-12-14T19:56:12.883+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-12-14T19:56:12.884+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 5 for task run_batch_layer (Bash command failed. The command returned a non-zero exit code 1.; 144)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2995, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3149, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3173, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 249, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-14T19:56:12.909+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 1
+[2025-12-14T19:56:12.939+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T19:56:12.956+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

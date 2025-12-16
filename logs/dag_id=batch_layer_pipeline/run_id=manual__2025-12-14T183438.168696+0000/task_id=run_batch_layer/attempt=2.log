@@ -1,0 +1,34 @@
+[2025-12-14T18:39:52.524+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer manual__2025-12-14T18:34:38.168696+00:00 [queued]>
+[2025-12-14T18:39:52.537+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.run_batch_layer manual__2025-12-14T18:34:38.168696+00:00 [queued]>
+[2025-12-14T18:39:52.538+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2025-12-14T18:39:52.589+0000] {taskinstance.py:1327} INFO - Executing <Task(DockerOperator): run_batch_layer> on 2025-12-14 18:34:38.168696+00:00
+[2025-12-14T18:39:52.604+0000] {standard_task_runner.py:57} INFO - Started process 291 to run task
+[2025-12-14T18:39:52.614+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'run_batch_layer', 'manual__2025-12-14T18:34:38.168696+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/exchange_rates_batch_dag.py', '--cfg-path', '/tmp/tmpfws7im9m']
+[2025-12-14T18:39:52.618+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask run_batch_layer
+[2025-12-14T18:39:52.753+0000] {task_command.py:410} INFO - Running <TaskInstance: batch_layer_pipeline.run_batch_layer manual__2025-12-14T18:34:38.168696+00:00 [running]> on host 5c34b1e03bae
+[2025-12-14T18:39:53.673+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='run_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T18:34:38.168696+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-14T18:34:38.168696+00:00'
+[2025-12-14T18:39:53.688+0000] {docker.py:462} INFO - Pulling docker image bitnami/spark:3.5
+[2025-12-14T18:40:04.958+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.44/images/create?tag=3.5&fromImage=bitnami%2Fspark
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 464, in execute
+    for output in self.cli.pull(self.image, stream=True, decode=True):
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/image.py", line 429, in pull
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.44/images/create?tag=3.5&fromImage=bitnami%2Fspark: Internal Server Error ("failed to resolve reference "docker.io/bitnami/spark:3.5": failed to do request: Head "https://registry-1.docker.io/v2/bitnami/spark/manifests/3.5": dialing registry-1.docker.io:443 container via direct connection because Docker Desktop has no HTTPS proxy: connecting to registry-1.docker.io:443: dial tcp: lookup registry-1.docker.io: no such host")
+[2025-12-14T18:40:04.985+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=batch_layer_pipeline, task_id=run_batch_layer, execution_date=20251214T183438, start_date=20251214T183952, end_date=20251214T184004
+[2025-12-14T18:40:05.039+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 11 for task run_batch_layer (500 Server Error for http+docker://localhost/v1.44/images/create?tag=3.5&fromImage=bitnami%2Fspark: Internal Server Error ("failed to resolve reference "docker.io/bitnami/spark:3.5": failed to do request: Head "https://registry-1.docker.io/v2/bitnami/spark/manifests/3.5": dialing registry-1.docker.io:443 container via direct connection because Docker Desktop has no HTTPS proxy: connecting to registry-1.docker.io:443: dial tcp: lookup registry-1.docker.io: no such host"); 291)
+[2025-12-14T18:40:05.111+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-12-14T18:40:05.276+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

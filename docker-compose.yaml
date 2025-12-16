@@ -1,0 +1,148 @@
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181:2181"
+
+  kafka:
+   image: confluentinc/cp-kafka:7.4.0
+   depends_on:
+    - zookeeper
+   ports:
+    - "9092:9092"
+    - "29092:29092"
+   environment:
+    KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092,PLAINTEXT_HOST://0.0.0.0:9092
+    KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+    KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+    KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+    KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: metastore
+      POSTGRES_USER: hive
+      POSTGRES_PASSWORD: hivepassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  hive-metastore:
+    image: apache/hive:3.1.3
+    depends_on:
+      - postgres
+    environment:
+      SERVICE_NAME: metastore
+      DB_DRIVER: postgres
+    ports:
+      - "9083:9083"
+    volumes:
+      - ./hive-site.xml:/opt/hive/conf/hive-site.xml
+
+  spark:
+   image: apache/spark:3.5.0
+   environment:
+     - SPARK_SUBMIT_OPTIONS=--conf spark.hadoop.fs.defaultFS=hdfs://hadoop-namenode:8020
+
+   container_name: spark-master
+   command: >
+    bash -c "/opt/spark/sbin/start-master.sh &&
+             tail -f /opt/spark/logs/*"
+   ports:
+    - "8080:8080"
+    - "7077:7077"
+   volumes:
+    - ./jobs:/opt/spark/jobs
+   depends_on:
+    - kafka
+    - hive-metastore
+
+  spark-worker:
+   image: apache/spark:3.5.0
+   container_name: spark-worker-1
+   command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+   depends_on:
+    - spark
+   environment:
+    - SPARK_WORKER_CORES=2
+    - SPARK_WORKER_MEMORY=1g
+    - SPARK_SUBMIT_OPTIONS=--conf spark.hadoop.fs.defaultFS=hdfs://hadoop-namenode:8020
+   volumes:
+    - ./jobs:/opt/spark/jobs
+
+
+  airflow:
+    image: apache/airflow:2.10.0
+    user: root  # CRITIQUE : permet l'accès au socket Docker
+    environment:
+      AIRFLOW_CORE_EXECUTOR: LocalExecutor
+      AIRFLOW_CORE_LOAD_EXAMPLES: "False"
+      AIRFLOW_CORE_SQL_ALCHEMY_CONN: postgresql+psycopg2://hive:hivepassword@postgres/metastore
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - /var/run/docker.sock:/var/run/docker.sock  # CRITIQUE : accès Docker
+    depends_on:
+      - spark
+      - hive-metastore
+      - postgres
+    command: ["standalone"]
+
+  zeppelin:
+   image: apache/zeppelin:0.11.2
+   ports:
+    - "8082:8080" 
+   depends_on:
+    - spark
+    - hive-metastore
+   environment:
+    MASTER: "spark://spark-master:7077"
+   volumes:
+    - ./zeppelin-conf/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
+    - spark_home:/opt/spark
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9003"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9002:9000"  # API S3
+      - "9003:9003"  # Console web
+    volumes:
+      - minio_data:/data
+  hadoop-namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: hadoop-namenode
+    environment:
+      - CLUSTER_NAME=default
+    ports:
+      - "9870:9870"
+      - "8020:8020"
+    volumes:
+    - hdfs_namenode:/hadoop/dfs/name
+
+  hadoop-datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: hadoop-datanode
+    depends_on:
+      - hadoop-namenode
+    environment:
+      - CORE_CONF_fs_defaultFS=hdfs://hadoop-namenode:8020
+    volumes:
+      - hdfs_datanode:/hadoop/dfs/data
+
+volumes:
+  postgres_data:
+  minio_data:
+  hdfs_namenode:
+  hdfs_datanode:
+  spark_home:

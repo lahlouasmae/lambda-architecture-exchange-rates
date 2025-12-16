@@ -1,0 +1,24 @@
+[2025-12-14T15:08:07.862+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: exchange_rates_batch_layer.spark_batch_layer scheduled__2025-12-13T00:00:00+00:00 [queued]>
+[2025-12-14T15:08:07.885+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: exchange_rates_batch_layer.spark_batch_layer scheduled__2025-12-13T00:00:00+00:00 [queued]>
+[2025-12-14T15:08:07.888+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-12-14T15:08:07.945+0000] {taskinstance.py:1327} INFO - Executing <Task(SparkSubmitOperator): spark_batch_layer> on 2025-12-13 00:00:00+00:00
+[2025-12-14T15:08:07.950+0000] {standard_task_runner.py:57} INFO - Started process 59 to run task
+[2025-12-14T15:08:07.964+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'exchange_rates_batch_layer', 'spark_batch_layer', 'scheduled__2025-12-13T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/exchange_rates_batch_dag.py', '--cfg-path', '/tmp/tmpm7aapuym']
+[2025-12-14T15:08:07.967+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask spark_batch_layer
+[2025-12-14T15:08:08.085+0000] {task_command.py:410} INFO - Running <TaskInstance: exchange_rates_batch_layer.spark_batch_layer scheduled__2025-12-13T00:00:00+00:00 [running]> on host 28da05533060
+[2025-12-14T15:08:08.282+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='exchange_rates_batch_layer' AIRFLOW_CTX_TASK_ID='spark_batch_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-12-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-13T00:00:00+00:00'
+[2025-12-14T15:08:08.297+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2025-12-14T15:08:08.300+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master yarn --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py
+[2025-12-14T15:08:08.491+0000] {spark_submit.py:490} INFO - /home/airflow/.local/lib/python3.7/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-12-14T15:08:08.493+0000] {spark_submit.py:490} INFO - JAVA_HOME is not set
+[2025-12-14T15:08:08.513+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master yarn --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py. Error code is: 1.
+[2025-12-14T15:08:08.521+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=exchange_rates_batch_layer, task_id=spark_batch_layer, execution_date=20251213T000000, start_date=20251214T150807, end_date=20251214T150808
+[2025-12-14T15:08:08.552+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 5 for task spark_batch_layer (Cannot execute: spark-submit --master yarn --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 --executor-memory 2g --driver-memory 1g --name ExchangeRatesBatchLayer --verbose --queue root.default /opt/spark/jobs/batch_layer.py. Error code is: 1.; 59)
+[2025-12-14T15:08:08.571+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-12-14T15:08:08.648+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

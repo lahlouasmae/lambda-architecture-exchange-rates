@@ -1,0 +1,129 @@
+[2025-12-14T23:37:52.947+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-14T23:37:52.981+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: batch_layer_pipeline.verify_avro_parquet scheduled__2025-12-14T22:00:00+00:00 [queued]>
+[2025-12-14T23:37:53.005+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: batch_layer_pipeline.verify_avro_parquet scheduled__2025-12-14T22:00:00+00:00 [queued]>
+[2025-12-14T23:37:53.009+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2025-12-14T23:37:53.056+0000] {taskinstance.py:2879} INFO - Executing <Task(BashOperator): verify_avro_parquet> on 2025-12-14 22:00:00+00:00
+[2025-12-14T23:37:53.067+0000] {standard_task_runner.py:72} INFO - Started process 320 to run task
+[2025-12-14T23:37:53.078+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'batch_layer_pipeline', 'verify_avro_parquet', 'scheduled__2025-12-14T22:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/batch_pipeline_dag.py', '--cfg-path', '/tmp/tmproe6q8sa']
+[2025-12-14T23:37:53.091+0000] {standard_task_runner.py:105} INFO - Job 13: Subtask verify_avro_parquet
+[2025-12-14T23:37:53.183+0000] {task_command.py:467} INFO - Running <TaskInstance: batch_layer_pipeline.verify_avro_parquet scheduled__2025-12-14T22:00:00+00:00 [running]> on host 137ed86f2410
+[2025-12-14T23:37:53.342+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='batch_layer_pipeline' AIRFLOW_CTX_TASK_ID='verify_avro_parquet' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-14T22:00:00+00:00'
+[2025-12-14T23:37:53.345+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-12-14T23:37:53.454+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T23:37:53.459+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec spark-master         /opt/spark/bin/spark-submit         --master spark://spark-master:7077         --packages org.apache.spark:spark-avro_2.12:3.5.0         /opt/spark/jobs/verify_avro_parquet.py\n        ']
+[2025-12-14T23:37:53.495+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T23:37:58.840+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-12-14T23:37:59.009+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/spark/.ivy2/cache
+[2025-12-14T23:37:59.010+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/spark/.ivy2/jars
+[2025-12-14T23:37:59.021+0000] {subprocess.py:93} INFO - org.apache.spark#spark-avro_2.12 added as a dependency
+[2025-12-14T23:37:59.025+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-4528d124-6528-4412-ac0e-036ef15b66f1;1.0
+[2025-12-14T23:37:59.027+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-14T23:37:59.406+0000] {subprocess.py:93} INFO - 	found org.apache.spark#spark-avro_2.12;3.5.0 in central
+[2025-12-14T23:37:59.484+0000] {subprocess.py:93} INFO - 	found org.tukaani#xz;1.9 in central
+[2025-12-14T23:37:59.531+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 493ms :: artifacts dl 14ms
+[2025-12-14T23:37:59.533+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-12-14T23:37:59.535+0000] {subprocess.py:93} INFO - 	org.apache.spark#spark-avro_2.12;3.5.0 from central in [default]
+[2025-12-14T23:37:59.536+0000] {subprocess.py:93} INFO - 	org.tukaani#xz;1.9 from central in [default]
+[2025-12-14T23:37:59.538+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-14T23:37:59.539+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-12-14T23:37:59.540+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-12-14T23:37:59.540+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-14T23:37:59.541+0000] {subprocess.py:93} INFO - 	|      default     |   2   |   0   |   0   |   0   ||   2   |   0   |
+[2025-12-14T23:37:59.542+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-12-14T23:37:59.545+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-4528d124-6528-4412-ac0e-036ef15b66f1
+[2025-12-14T23:37:59.546+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-12-14T23:37:59.555+0000] {subprocess.py:93} INFO - 	0 artifacts copied, 2 already retrieved (0kB/11ms)
+[2025-12-14T23:38:00.119+0000] {subprocess.py:93} INFO - 25/12/14 23:38:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-12-14T23:38:03.188+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SparkContext: Running Spark version 3.5.0
+[2025-12-14T23:38:03.194+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-12-14T23:38:03.195+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SparkContext: Java version 11.0.20.1
+[2025-12-14T23:38:03.285+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO ResourceUtils: ==============================================================
+[2025-12-14T23:38:03.286+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-12-14T23:38:03.320+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO ResourceUtils: ==============================================================
+[2025-12-14T23:38:03.322+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SparkContext: Submitted application: Verify AVRO and PARQUET
+[2025-12-14T23:38:03.381+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-12-14T23:38:03.414+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO ResourceProfile: Limiting resource is cpu
+[2025-12-14T23:38:03.416+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-12-14T23:38:04.483+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SecurityManager: Changing view acls to: spark
+[2025-12-14T23:38:04.584+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SecurityManager: Changing modify acls to: spark
+[2025-12-14T23:38:04.615+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SecurityManager: Changing view acls groups to:
+[2025-12-14T23:38:04.679+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SecurityManager: Changing modify acls groups to:
+[2025-12-14T23:38:04.695+0000] {subprocess.py:93} INFO - 25/12/14 23:38:03 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2025-12-14T23:38:05.482+0000] {subprocess.py:93} INFO - 25/12/14 23:38:05 INFO Utils: Successfully started service 'sparkDriver' on port 39519.
+[2025-12-14T23:38:05.736+0000] {subprocess.py:93} INFO - 25/12/14 23:38:05 INFO SparkEnv: Registering MapOutputTracker
+[2025-12-14T23:38:05.946+0000] {subprocess.py:93} INFO - 25/12/14 23:38:05 INFO SparkEnv: Registering BlockManagerMaster
+[2025-12-14T23:38:06.091+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-12-14T23:38:06.095+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-12-14T23:38:06.134+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-12-14T23:38:06.191+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-5931b690-6961-4e37-84eb-4228ee0b9652
+[2025-12-14T23:38:06.225+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-12-14T23:38:06.257+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-12-14T23:38:06.508+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-12-14T23:38:06.629+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-12-14T23:38:06.768+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar at spark://a2bac326dd73:39519/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar with timestamp 1765755483161
+[2025-12-14T23:38:06.782+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO SparkContext: Added JAR file:///home/spark/.ivy2/jars/org.tukaani_xz-1.9.jar at spark://a2bac326dd73:39519/jars/org.tukaani_xz-1.9.jar with timestamp 1765755483161
+[2025-12-14T23:38:06.803+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar at spark://a2bac326dd73:39519/files/org.apache.spark_spark-avro_2.12-3.5.0.jar with timestamp 1765755483161
+[2025-12-14T23:38:06.805+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO Utils: Copying /home/spark/.ivy2/jars/org.apache.spark_spark-avro_2.12-3.5.0.jar to /tmp/spark-308bfb49-03df-4b85-8902-c065eee23c62/userFiles-b0b3f02d-2283-4964-b887-5ce81243cba6/org.apache.spark_spark-avro_2.12-3.5.0.jar
+[2025-12-14T23:38:06.848+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO SparkContext: Added file file:///home/spark/.ivy2/jars/org.tukaani_xz-1.9.jar at spark://a2bac326dd73:39519/files/org.tukaani_xz-1.9.jar with timestamp 1765755483161
+[2025-12-14T23:38:06.851+0000] {subprocess.py:93} INFO - 25/12/14 23:38:06 INFO Utils: Copying /home/spark/.ivy2/jars/org.tukaani_xz-1.9.jar to /tmp/spark-308bfb49-03df-4b85-8902-c065eee23c62/userFiles-b0b3f02d-2283-4964-b887-5ce81243cba6/org.tukaani_xz-1.9.jar
+[2025-12-14T23:38:07.074+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-12-14T23:38:07.237+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.7:7077 after 101 ms (0 ms spent in bootstraps)
+[2025-12-14T23:38:07.550+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20251214233807-0007
+[2025-12-14T23:38:07.576+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251214233807-0007/0 on worker-20251214211957-172.19.0.8-45289 (172.19.0.8:45289) with 2 core(s)
+[2025-12-14T23:38:07.584+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO StandaloneSchedulerBackend: Granted executor ID app-20251214233807-0007/0 on hostPort 172.19.0.8:45289 with 2 core(s), 1024.0 MiB RAM
+[2025-12-14T23:38:07.597+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33045.
+[2025-12-14T23:38:07.598+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO NettyBlockTransferService: Server created on a2bac326dd73:33045
+[2025-12-14T23:38:07.601+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-12-14T23:38:07.619+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, a2bac326dd73, 33045, None)
+[2025-12-14T23:38:07.626+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO BlockManagerMasterEndpoint: Registering block manager a2bac326dd73:33045 with 434.4 MiB RAM, BlockManagerId(driver, a2bac326dd73, 33045, None)
+[2025-12-14T23:38:07.634+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, a2bac326dd73, 33045, None)
+[2025-12-14T23:38:07.637+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, a2bac326dd73, 33045, None)
+[2025-12-14T23:38:07.967+0000] {subprocess.py:93} INFO - 25/12/14 23:38:07 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251214233807-0007/0 is now RUNNING
+[2025-12-14T23:38:09.174+0000] {subprocess.py:93} INFO - 25/12/14 23:38:09 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-12-14T23:38:09.921+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:09.923+0000] {subprocess.py:93} INFO - 🔍 VÉRIFICATION DES TABLES HIVE
+[2025-12-14T23:38:09.924+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:09.925+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:09.926+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:09.927+0000] {subprocess.py:93} INFO - 📦 VÉRIFICATION : exchange_rates_master (AVRO)
+[2025-12-14T23:38:09.928+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:09.929+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:09.929+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:09.930+0000] {subprocess.py:93} INFO - 📊 Vérification : exchange_rates_master (AVRO)
+[2025-12-14T23:38:09.930+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:36.938+0000] {subprocess.py:93} INFO - ⚠️ La table 'exchange_rates_master' existe mais est vide
+[2025-12-14T23:38:36.939+0000] {subprocess.py:93} INFO - ℹ️ Attendez que des données soient envoyées à Kafka
+[2025-12-14T23:38:36.940+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:36.940+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:36.941+0000] {subprocess.py:93} INFO - 📦 VÉRIFICATION : exchange_rates_daily_avg (PARQUET)
+[2025-12-14T23:38:36.942+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:36.943+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:36.944+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:36.944+0000] {subprocess.py:93} INFO - 📊 Vérification : exchange_rates_daily_avg (PARQUET)
+[2025-12-14T23:38:36.945+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:38.556+0000] {subprocess.py:93} INFO - ⚠️ La table 'exchange_rates_daily_avg' existe mais est vide
+[2025-12-14T23:38:38.572+0000] {subprocess.py:93} INFO - ℹ️ Attendez que des données soient envoyées à Kafka
+[2025-12-14T23:38:38.584+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:38.593+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:38.595+0000] {subprocess.py:93} INFO - 📋 RÉSUMÉ FINAL
+[2025-12-14T23:38:38.596+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:38.598+0000] {subprocess.py:93} INFO - exchange_rates_master (AVRO)      : ✅ OK (0 enregistrements)
+[2025-12-14T23:38:38.600+0000] {subprocess.py:93} INFO - exchange_rates_daily_avg (PARQUET): ✅ OK (0 enregistrements)
+[2025-12-14T23:38:38.603+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:38.603+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:38.605+0000] {subprocess.py:93} INFO - ℹ️ INFO : Les tables existent mais sont vides.
+[2025-12-14T23:38:38.606+0000] {subprocess.py:93} INFO -    Le batch_layer a été exécuté mais n'a trouvé aucune donnée dans Kafka.
+[2025-12-14T23:38:38.618+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:38.619+0000] {subprocess.py:93} INFO - 💡 SUGGESTION :
+[2025-12-14T23:38:38.620+0000] {subprocess.py:93} INFO -    1. Vérifiez que le producer envoie bien des données
+[2025-12-14T23:38:38.620+0000] {subprocess.py:93} INFO -    2. Vérifiez le nom du topic Kafka
+[2025-12-14T23:38:38.621+0000] {subprocess.py:93} INFO -    3. Attendez quelques secondes et relancez le batch_layer
+[2025-12-14T23:38:39.406+0000] {subprocess.py:93} INFO - 
+[2025-12-14T23:38:39.406+0000] {subprocess.py:93} INFO - ✅ Vérification terminée avec succès !
+[2025-12-14T23:38:39.407+0000] {subprocess.py:93} INFO - ======================================================================
+[2025-12-14T23:38:39.821+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-14T23:38:39.860+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-12-14T23:38:39.861+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=batch_layer_pipeline, task_id=verify_avro_parquet, run_id=scheduled__2025-12-14T22:00:00+00:00, execution_date=20251214T220000, start_date=20251214T233752, end_date=20251214T233839
+[2025-12-14T23:38:39.917+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2025-12-14T23:38:39.949+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T23:38:39.957+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
