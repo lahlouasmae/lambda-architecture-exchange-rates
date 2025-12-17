@@ -13,6 +13,7 @@ L’objectif principal est de démontrer, de manière pratique, l’utilisation 
 * la visualisation et l’analyse des résultats.
 
 Les données sont récupérées depuis l’API publique : [https://api.frankfurter.app](https://api.frankfurter.app)
+
 <img width="474" height="264" alt="image" src="https://github.com/user-attachments/assets/53d55cdb-fec8-4907-9cda-8bc69165fe07" />
 
 ---
@@ -27,6 +28,7 @@ L’architecture Lambda repose sur quatre couches principales :
 * **Serving Layer** : interrogation et visualisation des données avec **Apache Zeppelin**.
 
 L’ensemble de l’infrastructure est déployé et orchestré via **Docker Compose**.
+
 <img width="1464" height="640" alt="image" src="https://github.com/user-attachments/assets/7eb3f9a8-d64e-4620-93e5-c851f6efc373" />
 
 ---
