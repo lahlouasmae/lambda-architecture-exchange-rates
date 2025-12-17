@@ -97,17 +97,22 @@ services:
     command: ["standalone"]
 
   zeppelin:
-   image: apache/zeppelin:0.11.2
-   ports:
-    - "8082:8080" 
-   depends_on:
-    - spark
-    - hive-metastore
-   environment:
-    MASTER: "spark://spark-master:7077"
-   volumes:
-    - ./zeppelin-conf/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
-    - spark_home:/opt/spark
+    build:
+      context: ./zeppelin-docker
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080" 
+    depends_on:
+      - spark
+    environment:
+      MASTER: "spark://spark-master:7077"
+      SPARK_HOME: /opt/spark
+      ZEPPELIN_ADDR: 0.0.0.0
+      ZEPPELIN_PORT: 8080
+    volumes:
+      - ./zeppelin-conf/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
+      - ./jobs:/opt/spark/jobs
+      - ./zeppelin-notebooks:/opt/zeppelin/notebook
   minio:
     image: minio/minio:latest
     command: server /data --console-address ":9003"
