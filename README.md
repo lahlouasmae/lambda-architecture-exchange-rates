@@ -159,13 +159,24 @@ Apache Zeppelin permet :
 
 ---
 
+## Vidéos démonstratives
+
+https://github.com/user-attachments/assets/0ffe2c5b-21bc-48a0-8e56-62490352abed
+
+https://github.com/user-attachments/assets/6fbf66df-6872-4313-b64c-ceb65e35e89c
+
+---
+
 ## Contexte académique
 
 **Mini-projet – Architectures et Infrastructures Big Data**
 3ème année – Ingénierie Informatique et Technologies Émergentes
 ENSA El Jadida – Université Chouaib Doukkali
 
+
 ---
+
+
 
 ## Réalisé par
 
